@@ -222,3 +222,26 @@ footer { background: #0f172a; padding: 40px 0 20px; text-align: center; color: #
         padding: 10px 5px !important;
     }
 }
+/* --- About Section Mobile Fix --- */
+@media (max-width: 992px) {
+    .about-wrap {
+        flex-direction: column; /* ছবি এবং লেখাকে নিচে নিচে সাজাবে */
+        text-align: center; /* লেখাগুলোকে মাঝখানে আনবে */
+        gap: 30px; /* ছবি ও লেখার মাঝে সুন্দর গ্যাপ তৈরি করবে */
+    }
+    
+    .about-image {
+        width: 100%;
+        max-width: 400px; /* মোবাইলে ছবির সাইজ ঠিক রাখবে */
+        margin: 0 auto;
+    }
+    
+    .about-content .section-title {
+        text-align: center !important; /* টাইটেল একদম মাঝখানে আনবে */
+    }
+    
+    .about-list li {
+        justify-content: flex-start; /* লিস্টের পয়েন্টগুলো বামপাশেই সুন্দর করে সাজানো থাকবে */
+        text-align: left;
+    }
+}
