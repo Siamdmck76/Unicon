@@ -245,3 +245,49 @@ footer { background: #0f172a; padding: 40px 0 20px; text-align: center; color: #
         text-align: left;
     }
 }
+/* --- Custom Header Logo Size --- */
+.custom-logo {
+    height: 45px; /* লোগোর সাইজ আপনার পছন্দমতো এখান থেকে বাড়াতে বা কমাতে পারবেন */
+    width: auto; 
+    margin-right: 8px; /* লোগো এবং লেখার মাঝখানে একটু গ্যাপ */
+    vertical-align: middle; /* লোগো এবং লেখা যেন একদম এক লাইনে থাকে */
+}
+/* =========================================
+   Heading Animation CSS
+========================================= */
+
+/* ১. অ্যানিমেশনের মেইন কি-ফ্রেম (নিচ থেকে উপরে এবং ফেড ইন) */
+@keyframes fadeInUpHeading {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* ৩০ পিক্সেল নিচ থেকে শুরু হবে */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* আসল জায়গায় ফিরে আসবে */
+    }
+}
+
+/* ২. প্রথম লাইনের অ্যানিমেশন (Your Gateway to) */
+.name-title .animate-line-1 {
+    display: inline-block; /* অ্যানিমেশন ঠিকমতো কাজ করার জন্য প্রয়োজন */
+    opacity: 0; /* শুরুতে অদৃশ্য থাকবে */
+    animation: fadeInUpHeading 0.8s ease-out forwards; /* ০.৮ সেকেন্ড ধরে চলবে */
+    animation-delay: 0.2s; /* পেজ লোড হওয়ার ০.২ সেকেন্ড পর শুরু হবে */
+}
+
+/* ৩. দ্বিতীয় লাইনের অ্যানিমেশন (Top Universities) */
+.name-title .animate-line-2 {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInUpHeading 0.8s ease-out forwards;
+    animation-delay: 0.6s; /* প্রথম লাইন আসার ০.৪ সেকেন্ড পর এটি শুরু হবে (Staggered effect) */
+}
+
+/* ৪. নিশ্চিত করা যে মোবাইল ভিউতেও অ্যানিমেশন স্মুথ থাকে */
+@media (max-width: 768px) {
+    .name-title .animate-line-1,
+    .name-title .animate-line-2 {
+        animation-duration: 0.6s; /* মোবাইলে একটু দ্রুত হবে */
+    }
+}
